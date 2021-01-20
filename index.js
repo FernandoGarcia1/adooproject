@@ -28,6 +28,8 @@ const host = process.env.HOST || '0.0.0.0';
 app.listen(port,host,  () =>{
     console.log(`El servidor esta corriendo en el puesto ${port}`)
 })
+
+app.use('/', router);
 //conectar db 
 db.authenticate()
 .then ( () => console.log('Base de datos conectada'))
@@ -101,4 +103,4 @@ app.use(express.static('public'));
 
 
 //DEfine rutas
-app.use('/', router);
+
