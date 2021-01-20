@@ -1,4 +1,3 @@
-
 import express from 'express';
 import router from './routes/index.js';
 import morgan from 'morgan';
@@ -25,6 +24,9 @@ app.use(fileUpload());
 //Define port
 const port = process.env.PORT || 4500;
 const host = process.env.HOST || '0.0.0.0';
+
+app.listen(port,host,  () =>{
+    console.log(`El servidor esta corriendo en el puesto ${port}`)
 
 //conectar db 
 db.authenticate()
@@ -104,9 +106,5 @@ app.use('/', router);
 
 
 
-app.listen(port,host,  () =>{
-    console.log(`El servidor esta corriendo en el puesto ${port}`)
+
 })
-
-
-
