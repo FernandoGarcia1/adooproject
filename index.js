@@ -77,22 +77,7 @@ app.use(session({
  app.use(passport.session());
 
 
-passport.use(new PassportLocal(function(usenarme,password,done){
-    if(usenarme === "Administrador Martinez" && password === "aDM3456S"){
-        return done (null, {id:1 , name: "Fernando"}); //El usuarui Fernando Inicio Sesion    
-    }
 
-    done(null,false); //No se paso la autenticacion de los datos
-}));
-
-//Serializacion
-passport.serializeUser(function(user,done){
-    done(null,user.id);
-})
-
-passport.deserializeUser(function(id,done){
-    done(null,{id: 1, name: "Fernando"});
-})
 
 //Definir la carpeta publica
 app.use(express.static('public'));  
@@ -102,9 +87,4 @@ app.use(express.static('public'));
 
 //DEfine rutas
 app.use('/', router);
-
-
-
-
-
 })
