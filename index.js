@@ -25,11 +25,6 @@ app.use(fileUpload());
 const port = process.env.PORT || 4500;
 const host = process.env.HOST || '0.0.0.0';
 
-app.listen(process.env.PORT || 5000,()=> {
-    console.log(`El servidor esta corriendo en el puesto ${port}`)
-})
-
-app.use('/', router);
 //conectar db 
 db.authenticate()
 .then ( () => console.log('Base de datos conectada'))
@@ -103,4 +98,11 @@ app.use(express.static('public'));
 
 
 //DEfine rutas
+app.use('/', router);
 
+
+
+
+app.listen(process.env.PORT || 4500,process.env.HOST || '0.0.0.0',  () =>{
+    console.log(`El servidor esta corriendo en el puesto ${port}`)
+})
