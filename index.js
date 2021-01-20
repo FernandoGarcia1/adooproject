@@ -25,7 +25,7 @@ app.use(fileUpload());
 const port = process.env.PORT || 4500;
 const host = process.env.HOST || '0.0.0.0';
 
-app.listen(port,host,  () =>{
+app.listen(process.env.PORT || 5000,()=> {
     console.log(`El servidor esta corriendo en el puesto ${port}`)
 })
 
