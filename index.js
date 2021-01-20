@@ -103,6 +103,6 @@ app.use('/', router);
 
 
 
-app.listen(process.env.PORT || 4500,process.env.HOST || '0.0.0.0',  () =>{
+app.listen(process.env.PORT || 4500,  () =>{
     console.log(`El servidor esta corriendo en el puesto ${port}`)
 })
