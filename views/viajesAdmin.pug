@@ -1,10 +1,10 @@
-extends ./layout/admin/indexAdmin
+extends ./layout/indexAdmin
 
 block contenido  
   h1.mt-5.py-5.text-center #{pagina}     
   // p= JSON.stringify(viajes) -- Muestra toda la info de la bd
   main.container.mt-5
-      include ./layout/Admin/vista_viajesAdmin
+      include ./layout/vista_viajesAdmin
       .row
         .col-md-12
           h2.d-block.w-100.text-center.mt-5 Agrega un nuevo Viaje
